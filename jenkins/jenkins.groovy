@@ -1,11 +1,14 @@
-
-node{    
-stage("checkout"){       
-checkout scm    
-}    
-stage("Build"){           
-sh "mvn clean verify"   
-}       
-stage("Deploy"){        
-sh "mvn package" 
- }}
+node{
+    stage("checkout"){
+        checkout scm
+    }
+    stage("Build"){
+       
+     sh "mvn clean compile"
+    }
+   
+    stage("deploy"){
+        
+        sh "mvn package"
+    }
+}
