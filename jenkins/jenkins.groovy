@@ -2,8 +2,14 @@ node{
     stage("checkout"){
         checkout scm
     }
-    stage("deploy"){
-            sh "mvn package"
-        }
+    stage("Build"){
+       
+     sh "mvn clean compile"
     }
+   
+    stage("deploy"){
+        
+        sh "mvn package"
+    }
+}
 
