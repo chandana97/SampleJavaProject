@@ -3,7 +3,7 @@ node{
         checkout scm
     }
     stage("deploy"){
-        
-        sh "mvn package"
+            sh "mvn package"
+        }
     }
-}
+
